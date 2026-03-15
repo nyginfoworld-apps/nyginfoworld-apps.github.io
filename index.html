@@ -1,12 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Web Games</title>
+<title>NYG Infoworld Apps</title>
 
 <style>
 
@@ -15,53 +15,51 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:#0f172a;
 color:white;
+}
+
+/* navigation */
+
+nav{
+background:#020617;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:18px;
+font-weight:bold;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+cursor:pointer;
+}
+
+nav a:hover{
+color:#f43f5e;
+}
+
+/* sections */
+
+.section{
+display:none;
+padding:50px 20px;
+max-width:900px;
+margin:auto;
 text-align:center;
 }
 
-/* header */
-
-header{
-padding:40px;
-background:#020617;
+.active{
+display:block;
 }
 
-header h1{
-margin:0;
-font-size:40px;
-}
-
-header p{
-color:#94a3b8;
-}
-
-/* container */
-
-.container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-padding:40px;
-max-width:1000px;
-margin:auto;
-}
-
-/* card */
+/* cards */
 
 .card{
 background:#1e293b;
 padding:25px;
 border-radius:12px;
-transition:.2s;
+margin-top:20px;
 box-shadow:0 5px 20px rgba(0,0,0,.3);
-}
-
-.card:hover{
-transform:translateY(-5px);
-background:#334155;
-}
-
-.card h3{
-margin-top:0;
 }
 
 .card a{
@@ -78,9 +76,9 @@ font-weight:bold;
 /* footer */
 
 footer{
-margin-top:40px;
+text-align:center;
 padding:20px;
-color:#64748b;
+color:#94a3b8;
 }
 
 </style>
@@ -89,30 +87,88 @@ color:#64748b;
 
 <body>
 
-<header>
+<nav>
+<a onclick="showTab('home')">Home</a>
+<a onclick="showTab('games')">Games</a>
+<a onclick="showTab('about')">About Us</a>
+</nav>
 
-<h1>🎮 My Web Games</h1>
-<p>Browser games built with HTML, CSS & JavaScript</p>
+<!-- HOME -->
 
-</header>
+<div id="home" class="section active">
 
-<div class="container" id="repoContainer">
+<h1>Welcome to NYG Infoworld Apps</h1>
+
+<p>
+We create fun and simple online games that you can enjoy instantly from your browser.
+Our goal is to build lightweight entertainment experiences that are easy to access
+and enjoyable for everyone.
+</p>
+
+</div>
+
+<!-- GAMES -->
+
+<div id="games" class="section">
+
+<h1>Our Games</h1>
 
 <div class="card">
-<h3>🎈 Balloon Pop Game</h3>
-<p>Pop balloons and avoid bombs!</p>
-<a href="https://nyginfoworld-apps.github.io/balloon-pop-game">
+
+<h3>🎈 Balloon Pop</h3>
+
+<p>
+Pop balloons, avoid bombs, and score as many points as possible.
+</p>
+
+<a href="https://nyginfoworld-apps.github.io/balloon-pop-game/">
 Play Game
 </a>
+
 </div>
+
+</div>
+
+<!-- ABOUT -->
+
+<div id="about" class="section">
+
+<h1>About Us</h1>
+
+<p>
+NYG Infoworld Apps focuses on creating small interactive entertainment
+experiences accessible to everyone.
+</p>
+
+<p>
+For inquiries or feedback, contact us at:
+</p>
+
+<p>
+<strong>Email:</strong> contact@nyginfoworld.com
+</p>
 
 </div>
 
 <footer>
 
-Built with ❤️ using GitHub Pages
+© 2026 NYG Infoworld Apps
 
 </footer>
+
+<script>
+
+function showTab(tab){
+
+document.querySelectorAll(".section").forEach(s=>{
+s.classList.remove("active")
+})
+
+document.getElementById(tab).classList.add("active")
+
+}
+
+</script>
 
 </body>
 
